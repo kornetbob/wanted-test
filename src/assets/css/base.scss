@@ -1,0 +1,68 @@
+@import './mixin';
+
+*{padding:0; margin:0}
+a{color:#000}
+button{border:0; cursor:pointer}
+.hidden{position:absolute; top:0; left:0; font-size:0; color:transparent}
+#wrap{
+  #nav {
+    height:50px; text-align:center; line-height:50px;
+    background: white;
+  }
+  .container{
+    .slide_wrap{
+      position:relative; overflow:hidden; height:300px;
+      .slide_track{height:100%}
+      .slide_item{
+        position:absolute; top:0; left:0; width:100%; height:100%;
+        .border{
+          height:100%;
+          a{
+            display:block; height:100%; background-repeat:no-repeat; background-position:center; background-size:cover;
+            > div.center{
+              position:relative; margin:0 auto; width:768px; height:100%;
+              .txt_box{
+                position:absolute; bottom:20px; left:20px; box-sizing:border-box; padding:20px 20px 10px; border-radius: 3px; width:340px; background:#fff;
+                .tit{margin-bottom:5px; line-height:30px; font-size:22px; font-weight:600; color:#333}
+                .summary{margin-bottom:20px; font-size:14px; color:#666}
+                .goto{margin:0 -20px; padding:10px 20px 0; border-top:1px solid #ddd; color:#258bf7}
+              }
+            }
+          }
+        }
+      }
+      .slide_conteroller_wrap{
+        position:absolute; right:calc((100% - 768px)/2); bottom:20px;
+        > button{width:42px; height:42px; border-radius:50%; font-size:16px; background:rgba(255,255,255, 0.8)}
+        > button.prev{margin-right:10px}
+        > button.prev:before{content:'<'}
+        > button.next:before{content:'>'}
+      }
+    }
+    @include respond-to('mobile'){
+      .slide_wrap{
+        min-width:320px;
+        .slide_item{
+          padding:0 20px; width:80%;
+          .border{
+            box-sizing:border-box; border:1px solid #ddd; border-radius:5px; height: calc(100% - 1px);
+            a{
+              margin-bottom: 140px; width:100%; height:160px;
+              > div.center{
+                box-sizing:border-box; width:100%; height:160px;
+                .txt_box{
+                  position:absolute; bottom:-132px; left:0; box-sizing:border-box; padding:20px 20px 10px; border-radius: 0px; width:100%; background:#fff;
+                  .tit{margin-bottom:5px; line-height:30px; font-size:22px; font-weight:600; color:#333}
+                  .summary{margin-bottom:20px; font-size:14px; color:#666}
+                  .goto{margin:0 -20px; padding:10px 20px 0; border-top:1px solid #ddd; color:#258bf7}
+                }
+              }
+            }
+          }
+        }
+        .slide_conteroller_wrap{display:none}
+      }
+
+     }
+  }
+}

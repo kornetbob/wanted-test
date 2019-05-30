@@ -1,29 +1,12 @@
-# wanted-test
-
-## Project setup
-```
-yarn install
-```
-
-### Compiles and hot-reloads for development
-```
-yarn run serve
+1. 기본 정보
+```$xslt
+stack: typescript, vue(vue-cli)
+port: 3000
+start: npm run start or yarn start
 ```
 
-### Compiles and minifies for production
+2. 브라우저 확인
+```$xslt
+크롬 확인
+(맥 사용자이다 보니, IE확인 불가)
 ```
-yarn run build
-```
-
-### Run your tests
-```
-yarn run test
-```
-
-### Lints and fixes files
-```
-yarn run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
